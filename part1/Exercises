@@ -12,3 +12,9 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                    NAMES
 > docker images
 REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+
+1.3
+
+> docker run -it devopsdockeruh/pull_exercise
+You found the correct password. Secret message is:
+"This is the secret message"
