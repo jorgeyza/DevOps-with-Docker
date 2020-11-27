@@ -27,3 +27,29 @@ root@ff3f3cf48f23:/usr/app# tail -f ./logs.txt
 
 Secret message is:
 "Docker is easy"
+
+1.5
+
+*Terminal 1*
+> docker run -it ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+*Terminal 2*
+> docker ps
+CONTAINER ID        IMAGE                          COMMAND                   CREATED              STATUS              PORTS                    NAMES
+dc53f2cf0b96        ubuntu                         "sh -c 'echo \"Input …"   About a minute ago   Up About a minute                            flamboyant_goodall
+
+> docker exec -it dc53f2cf0b96 bash
+root@dc53f2cf0b96:/# apt update
+root@dc53f2cf0b96:/# apt install curl
+
+*Terminal 1*
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
