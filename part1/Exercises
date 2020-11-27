@@ -18,3 +18,12 @@ REPOSITORY             TAG                 IMAGE ID            CREATED          
 > docker run -it devopsdockeruh/pull_exercise
 You found the correct password. Secret message is:
 "This is the secret message"
+
+1.4
+
+> docker run devopsdockeruh/exec_bash_exercise
+> docker exec -it ff3f3cf48f23 bash
+root@ff3f3cf48f23:/usr/app# tail -f ./logs.txt
+
+Secret message is:
+"Docker is easy"
