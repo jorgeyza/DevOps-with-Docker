@@ -53,3 +53,22 @@ Searching..
 <h1>Moved Permanently</h1>
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
+
+1.6
+
+*Terminal*
+> docker run devopsdockeruh/overwrite_cmd_exercise
+
+-h,             --help                  to show this message
+-a [age],       --adult [age]           to check if you're older than 18
+-c [time],      --clock [time]          to start a clock
+-t [size],      --triangle [size]       to draw a triangle, takes second argument as the size
+
+Dockerfile
+FROM devopsdockeruh/overwrite_cmd_exercise
+CMD ["-c"]
+
+*Terminal*
+
+> docker build -t docker-clock .
+> docker run docker-clock
