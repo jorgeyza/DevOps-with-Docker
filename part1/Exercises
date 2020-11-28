@@ -100,3 +100,20 @@ Searching..
 <h1>Moved Permanently</h1>
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
+
+1.8
+
+> docker run devopsdockeruh/first_volume_exercise
+> docker run devopsdockeruh/first_volume_exercise ls
+Dockerfile
+README.md
+index.js
+logs.txt
+> docker run devopsdockeruh/first_volume_exercise pwd
+/usr/app
+> touch logs.txt
+> docker run -v "/$(pwd)/logs.txt:/usr/app/logs.txt" devopsdockeruh/first_volume_exercise
+
+*inside logs.txt*
+Secret message is:
+"Volume bind mount is easy"
