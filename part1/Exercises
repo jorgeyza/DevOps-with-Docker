@@ -249,3 +249,26 @@ CMD ["rails", "s"]
 
 > docker build -t exercise1-14 .
 > docker run -p 3000:3000 exercise1-14
+
+1.15
+
+*Dockerfile*
+FROM node:lts-alpine
+
+RUN apk update && apk add git
+
+WORKDIR /mydir
+
+RUN git clone https://github.com/jorgeyza/anecdotes-fullstackopen.git
+
+WORKDIR /mydir/anecdotes-fullstackopen
+
+RUN npm install
+
+ENTRYPOINT [ "npm" ]
+
+CMD [ "start" ]
+
+*Terminal*
+> docker build -t exercise1-15 .
+> docker run -p 3000:3000 exercise1-15
