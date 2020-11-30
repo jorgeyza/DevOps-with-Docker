@@ -19,6 +19,7 @@ part*/**/build
 .env.production.local
 part*/**/.env
 course-resources/
+part1/exercise1-8
 
 npm-debug.log*
 yarn-debug.log*
