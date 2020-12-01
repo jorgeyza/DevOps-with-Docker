@@ -272,3 +272,7 @@ CMD [ "start" ]
 *Terminal*
 > docker build -t exercise1-15 .
 > docker run -p 3000:3000 exercise1-15
+
+1.16
+
+https://devopswithdocker2020part1ex16.herokuapp.com/
