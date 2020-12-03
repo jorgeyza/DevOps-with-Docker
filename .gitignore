@@ -17,6 +17,7 @@ part*/**/.env
 course-resources/
 part1/exercise1-8
 part2/exercise2-4/scaling-exercise
+part2/exercise2-7/src
 
 npm-debug.log*
 yarn-debug.log*
