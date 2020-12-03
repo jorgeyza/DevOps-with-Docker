@@ -1,0 +1,46 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: example
+    container_name: db_backend
+    volumes:
+      - ./database:/var/lib/postgresql/data
+  redis:
+    image: redis:alpine
+    volumes:
+      - ./data:/data
+  backend-example-docker:
+    image: jorgeyza/backend-example-docker
+    build: ./backend
+    volumes:
+      - ./logs.txt:/mydir/backend-example-docker/logs.txt
+    environment:
+      - FRONT_URL=http://localhost
+      - REDIS=redis
+      - DB_USERNAME=postgres
+      - DB-NAME=backend-postgres-db
+      - DB_PASSWORD=example
+      - DB_HOST=db
+    depends_on:
+      - redis
+      - db
+  frontend-example-docker:
+    image: jorgeyza/frontend-example-docker
+    build: ./frontend
+    environment:
+      - API_URL=http://localhost/api
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on:
+      - backend-example-docker
+      - frontend-example-docker
+# deleted ports as they were useful only for testing in the previous exercise.
+# changed environments to match nginx config

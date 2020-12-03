@@ -11,8 +11,6 @@ services:
     image: redis:alpine
   backend-example-docker:
     image: jorgeyza/backend-example-docker
-    ports:
-      - 8000:8000
     volumes:
       - ./logs.txt:/mydir/backend-example-docker/logs.txt
     environment:
@@ -27,8 +25,6 @@ services:
       - db
   frontend-example-docker:
     image: jorgeyza/frontend-example-docker
-    ports:
-      - 5000:5000
     environment:
       - API_URL=http://localhost:8000
   nginx:

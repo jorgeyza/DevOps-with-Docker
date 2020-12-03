@@ -22,6 +22,10 @@ part2/exercise2-9/data
 part2/exercise2-9/database
 part2/exercise2-9/logs.txt
 part2/exercise2-9/nginx.conf
+part2/exercise2-10/data
+part2/exercise2-10/database
+part2/exercise2-10/logs.txt
+part2/exercise2-10/nginx.conf
 
 npm-debug.log*
 yarn-debug.log*
