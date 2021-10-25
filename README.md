@@ -2,7 +2,7 @@
 
 This repository contains exercise solutions for the DevOps with Docker course from the University of Helsinki.
 
-[View Certificate](----)
+[View Certificate](https://studies.cs.helsinki.fi/stats/api/certificate/docker2020/en/92d38e1215d2edc1d772e73f5055a39a)
 
 ## Part 0 - [Course Introduction](https://devopswithdocker.com/part0/)
 
